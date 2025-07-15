@@ -1,0 +1,15 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Resources:
+  _0c170d9c3a0366f160d268e2d4acc71ea0b63a62:
+    Type: AWS::Serverless::Function
+    Properties:
+      Runtime: java11
+      Role: arn:aws:iam::201560601476:role/LambdaFullAccess
+      Handler: cce._0c170d9c3a0366f160d268e2d4acc71ea0b63a62::handleRequest
+      MemorySize: 1024
+      Timeout: 60
+      CodeUri: s3://cce-bucket/_0c170d9c3a0366f160d268e2d4acc71ea0b63a62/508291de86f7b02e045ce4a21639a3f0
+      Environment:
+        Variables:
+          JAVA_TOOL_OPTIONS: -XX:+TieredCompilation -XX:TieredStopAtLevel=1
