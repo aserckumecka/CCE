@@ -1,0 +1,3 @@
+Running Time (ms): 120000
+Lambda Hardware Level (MB): 1024
+Response Time Limit (ms): 5000
