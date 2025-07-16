@@ -5,7 +5,7 @@ Resources:
     Type: 'AWS::Serverless::Function'
     Properties:
       Runtime: java11
-      Role: "arn:aws:iam::201560601476:role/LambdaFullAccess"
+      Role: "arn:aws:iam::<your_account_id>:role/LambdaFullAccess"
       Handler: ${package}.${className}::handleRequest
       MemorySize: 1024
       Timeout: 60
