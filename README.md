@@ -8,7 +8,7 @@ Optimization - Optimizing function grouping, execution, and hardware configurati
 CCE is the first cloud-based SIEM correlation engine capable of generating code for filter and correlation rules, deploying them as FaaS; processing events and generating alerts; and correlating alerts over time to produce alarms.
 
 
-Requirements to install:
+Requirements to test CCE:
 
 * AWS account and IAM credentials
 
@@ -23,3 +23,6 @@ Requirements to install:
 * Java 11 (used, 17 or 21 need to be tested -- versions supported by AWS Lambda)
 
 
+After the requirements have been installed, confirm your credentials (aws_access_key_id and aws_access_key_id) are set in ~/.aws/credentials text file (Ubuntu path example).
+
+After downloading the code, you need to access the folder <path_to_CCE_project>/CCE_code/statefull-lambda-archetype and type mvn clean install. Do the same for stateless-lambda-archetype. It will compile the code and test the code.
