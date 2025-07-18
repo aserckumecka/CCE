@@ -20,9 +20,9 @@ Requirements to test CCE:
 
 * Maven (https://maven.apache.org/install.html)
 
-* Java 11 (used, newer options 17 or 21 need to be tested -- versions supported by AWS Lambda)
+* Java 11 (used, newer options 17 or 21 need to be tested -- both versions are supported by AWS Lambda)
 
 
-After the requirements have been installed, confirm your credentials (aws_access_key_id and aws_access_key_id) are set in ~/.aws/credentials text file (Ubuntu path example).
+After the requirements have been installed, confirm if your credentials (aws_access_key_id and aws_access_key_id) are placed in ~/.aws/credentials file (Ubuntu path example).
 
-After downloading the code, you need to access the folder <path_to_CCE_project>/CCE_code/statefull-lambda-archetype and type mvn clean install. Do the same for stateless-lambda-archetype. It will compile the code and test the code.
+After downloading the code, you need to access the folder <path_to_CCE_project>/CCE_code/statefull-lambda-archetype and type mvn clean install. Do the same for stateless-lambda-archetype. It will delete an old version (if exists) and compile and test the code.
