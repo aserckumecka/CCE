@@ -12,14 +12,14 @@ Requirements to install:
 
 * AWS account and IAM credentials
 
-*User with permissions policies: AmazonDynamoDBFullAccess, AWSLambdaFullAccess, AmazonS3FullAccess.
+* User with permissions policies: AmazonDynamoDBFullAccess, AWSLambdaFullAccess, AmazonS3FullAccess.
 
-*S3 bucket, named "cce-bucket" (to store deployed lambdas)
+* S3 bucket, named "cce-bucket" (to store deployed lambdas)
 
-*AWS-CLI (https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
+* AWS-CLI (https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
 
-*Maven (https://maven.apache.org/install.html)
+* Maven (https://maven.apache.org/install.html)
 
-*Java 11 (used, 17 or 21 need to be tested)
+* Java 11 (used, 17 or 21 need to be tested)
 
 
