@@ -10,11 +10,16 @@ CCE is the first cloud-based SIEM correlation engine capable of generating code 
 
 Requirements to install:
 
-AWS account and IAM credentials
-User with permissions policies: AmazonDynamoDBFullAccess, AWSLambdaFullAccess, AmazonS3FullAccess.
-S3 bucket, named "cce-bucket" (to store deployed lambdas)
-AWS-CLI (https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
-Maven (https://maven.apache.org/install.html)
-Java 11 (used, 17 or 21 need to be tested)
+* AWS account and IAM credentials
+
+*User with permissions policies: AmazonDynamoDBFullAccess, AWSLambdaFullAccess, AmazonS3FullAccess.
+
+*S3 bucket, named "cce-bucket" (to store deployed lambdas)
+
+*AWS-CLI (https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
+
+*Maven (https://maven.apache.org/install.html)
+
+*Java 11 (used, 17 or 21 need to be tested)
 
 
