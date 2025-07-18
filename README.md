@@ -20,6 +20,6 @@ Requirements to install:
 
 * Maven (https://maven.apache.org/install.html)
 
-* Java 11 (used, 17 or 21 need to be tested)
+* Java 11 (used, 17 or 21 need to be tested -- versions supported by AWS Lambda)
 
 
