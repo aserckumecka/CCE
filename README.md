@@ -26,3 +26,8 @@ Requirements to test CCE:
 After the requirements have been installed, confirm if your credentials (aws_access_key_id and aws_access_key_id) are placed in ~/.aws/credentials file (Ubuntu path example).
 
 After downloading the code, you need to access the folder <path_to_CCE_project>/CCE_code/statefull-lambda-archetype and type mvn clean install. Do the same for stateless-lambda-archetype. It will delete an old version (if exists) and compile and test the code.
+
+The CCE code is found at "engine" folder, where you can compile the project (/CCE.java is the main class).
+
+At the same folder, you will find the CCE.conf, used to set how long you want to test CCE (in millis); the Lambda hardware Level (the default value is 1024, the best cost-bennefit, as explained in our paper - published in SRDS-2025); and the Response Time Limit (RTL), which sets the intervals (approx.) the user should wait untill triggering new lambdas (Detection and Correlation).
+
