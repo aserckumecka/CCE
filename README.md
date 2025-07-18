@@ -34,7 +34,7 @@ At the same folder, you will find the CCE.conf, used to set how long you want to
 The devices data are located at "../engine/devices/". The config folder contains a yml file per device, which sets the main data and parameters used by CCE.
 The folders "eps" and "ins" are used to collect processing data and recalculate the main parameters of each device.
 
-The folder rule_template_code stores the last generated and deployed code for lambdas. Each lambda code contains the instructions of devices grouped by CCE Bin Packing algorithm.
+The folder rule_template_code stores the last generated and deployed code for lambdas. Each lambda code contains the instructions of devices grouped by CCE Bin Packing algorithm (Detection Rules) and the code for Correlation Rules.
 
 The folder "rules_yml" contains all the rules CCE will use for processing events.
 
