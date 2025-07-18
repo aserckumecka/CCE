@@ -31,3 +31,10 @@ The CCE code is found at "engine" folder, where you can compile the project (/CC
 
 At the same folder, you will find the CCE.conf, used to set how long you want to test CCE (in millis); the Lambda hardware Level (the default value is 1024, the best cost-bennefit, as explained in our paper - published in SRDS-2025); and the Response Time Limit (RTL), which sets the intervals (approx.) the user should wait untill triggering new lambdas (Detection and Correlation).
 
+The devices data are located at "../engine/devices/". The config folder contains a yml file per device, which sets the main data and parameters used by CCE.
+The folders "eps" and "ins" are used to collect processing data and recalculate the main parameters of each device.
+
+The folder rule_template_code stores the last generated and deployed code for lambdas. Each lambda code contains the instructions of devices grouped by CCE Bin Packing algorithm.
+
+The folder "rules_yml" contains all the rules CCE will use for processing events.
+
