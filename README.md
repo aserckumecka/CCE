@@ -20,7 +20,7 @@ Requirements to test CCE:
 
 * Maven (https://maven.apache.org/install.html)
 
-* Java 11 (used, 17 or 21 need to be tested -- versions supported by AWS Lambda)
+* Java 11 (used, newer options 17 or 21 need to be tested -- versions supported by AWS Lambda)
 
 
 After the requirements have been installed, confirm your credentials (aws_access_key_id and aws_access_key_id) are set in ~/.aws/credentials text file (Ubuntu path example).
