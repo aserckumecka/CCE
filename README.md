@@ -35,14 +35,14 @@ Set your AWS account ID at:
 * ../CCE/CCE_code/stateless-lambda-archetype/target/classes/archetype-resources/template.yaml
 * ../CCE/CCE_code/stateless-lambda-archetype/src/main/resources/archetype-resources/template.yaml
 
-access the folder <path_to_CCE_project>/CCE_code/statefull-lambda-archetype and type mvn clean install. Do the same for stateless-lambda-archetype. It will delete an old version (if exists) and compile and test the code.
+Following, access the folder ../CCE/CCE_code/statefull-lambda-archetype and type mvn clean install. Do the same for stateless-lambda-archetype. It will delete an old version (if exists) and compile and test the code.
 
-The CCE code is found at "engine" folder, where you can compile the project (/CCE.java is the main class).
+At the "engine" directory you can find the CCE.java, the main class.
 
-At the same folder, you will find the CCE.conf, used to set how long you want to test CCE (in millis); the Lambda hardware Level (the default value is 1024, the best cost-bennefit, as explained in our paper - published in SRDS-2025); and the Response Time Limit (RTL), which sets the intervals (approx.) the user should wait untill triggering new lambdas (Detection and Correlation).
+At the same folder, you will find the CCE.conf, used to set: how long you want to test CCE (in millis); the Lambda hardware Level (the default value is 1024, the best cost-bennefit, as explained in our paper - published in SRDS-2025); and the Response Time Limit (RTL), which sets the intervals (approx.) the user should wait untill triggering new lambdas (Detection and Correlation).
 
 The devices data are located at "../engine/devices/". The config folder contains a yml file per device, which sets the main data and parameters used by CCE.
-The folders "eps" and "ins" are used to collect processing data and recalculate the main parameters of each device.
+The folders "eps" and "ins" are used to collect processing data and recalculate the main parameters of regression analysis for each device.
 
 The folder rule_template_code stores the last generated and deployed code for lambdas. Each lambda code contains the instructions of devices grouped by CCE Bin Packing algorithm (Detection Rules) and the code for Correlation Rules.
 
