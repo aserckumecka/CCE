@@ -14,7 +14,7 @@ Requirements to test CCE:
 
 * User with permissions policies: AmazonDynamoDBFullAccess, AWSLambdaFullAccess, AmazonS3FullAccess.
 
-* S3 bucket, named "cce-bucket" (to store deployed lambdas)
+* S3 bucket (to store deployed lambdas)
 
 * AWS-CLI (https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
 
