@@ -22,6 +22,7 @@ After the requirements have been installed, in a terminal, set your credentials 
 
 After downloading the code, you need to change some parameters at:
 * ../CCE/CCE_code/engine/src/main/java/cce/ruleupload/Bins_DeployCode.java, change "cce-bucket" with the bucket name you created to store the deployed lambdas.
+
 Also, change the bucket name at:
 * ../CCE/CCE_code/statefull-lambda-archetype/target/classes/archetype-resources/pom.xml
 * ../CCE/CCE_code/statefull-lambda-archetype/src/main/resources/archetype-resources/pom.xml
