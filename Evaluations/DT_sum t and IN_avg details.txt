@@ -1,20 +1,21 @@
-DT cost and IN cost details:
+DT_sum and IN_avg details:
+
 
 The expression representing the cost for all detections of a function is:
 
-DTcost = DTunit * DTsum * BLsize
+DTcost = DT_unit * DT_sum * BLsize
 
-To calculate the DTunit, power regression was used based on the same previous executions, as mentioned in Section VI-C (Regression Analysis) in our published paper (SRDS-2025). However, only samples with zero insertions were used to calculate the cost of processing DTs.
-In this case, the DTunit depends on the size of DTsum and the event block BLsize. The DTunit can be found by using the following expression:
+To calculate the DT_unit, power regression was used based on the same previous executions, as mentioned in Section VI-C (Regression Analysis) in our published paper (SRDS-2025). However, only samples with zero insertions were used to calculate the cost of processing DTs.
+In this case, the DT_unit depends on the size of DT_sum and the event block BL_size. The DT_unit can be found by using the following expression:
 
-DTunit = 0, 082071 ∗ (DTsum ∧ −0, 875655) ∗ (BLsize ∧ −0, 265985)
+DT_unit = 0,082071 ∗ (DT_sum ∧ −0,875655) ∗ (BL_size ∧ −0,265985)
 
-The DTcost will always represent the worst-case for that function since it is difficult to know previously how many events of that block will be verified for a few or for all detection. A function can be formed by rules of a single device with different detection as well as many different devices when the events will be processed only by the device-related detections.
+The DT_cost will always represent the worst-case for that function since it is difficult to know previously how many events of that block will be verified for a few or for all detection. A function can be formed by rules of a single device with different detection as well as many different devices when the events will be processed only by the device-related detections.
 The next step defines the Insert cost. Detection functions only perform inserts, either in alarm or alert databases. Only the Correlation function performs queries (AlertDB) and inserts (AlarmDB). This way, the expression represents the cost for all inserts in a Detection function: 
 
-INcost = INunit * (BLsize * INavg /100)
+IN_cost = IN_unit * (BL_size * IN_avg / 100)
 
-The INunit is determined by:
+The IN_unit is determined by:
 
-INunit = (EXtime - DTcost) / (BLsize * INavg /100)
+IN_unit = (EX_time - DT_cost) / (BL_size * IN_avg / 100)
 
