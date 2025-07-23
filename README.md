@@ -35,7 +35,7 @@ Set your AWS account ID at:
 * ../CCE/CCE_code/stateless-lambda-archetype/target/classes/archetype-resources/template.yaml
 * ../CCE/CCE_code/stateless-lambda-archetype/src/main/resources/archetype-resources/template.yaml
 
-Following, access the folder ../CCE/CCE_code/statefull-lambda-archetype and type mvn clean install. Do the same for stateless-lambda-archetype. It will delete an old version (if exists) and compile and test the code.
+Following, access the folder ../CCE/CCE_code/statefull-lambda-archetype and type "mvn clean install". Do the same for stateless-lambda-archetype. It will delete an old version (if exists) and compile and test the code.
 
 At the "engine" directory you can find the CCE.java, the main class.
 
