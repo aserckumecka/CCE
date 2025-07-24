@@ -14,6 +14,7 @@ Requirements to test CCE:
 * User with permissions policies: AmazonDynamoDBFullAccess, AWSLambdaFullAccess, AmazonS3FullAccess.
 * S3 bucket (to store deployed lambdas)
 * AWS-CLI (https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
+* AWS SAM CLI (https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/install-sam-cli.html)
 * Maven (https://maven.apache.org/install.html)
 * Java 11 (used, newer options 17 or 21 need to be tested -- both versions are supported by AWS Lambda)
 
