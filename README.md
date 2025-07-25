@@ -16,10 +16,9 @@ Requirements to test CCE:
 * AWS-CLI (https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
 * AWS SAM CLI (https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/install-sam-cli.html)
 * Maven (https://maven.apache.org/install.html)
-* Java 11 (used, newer options 17 or 21 need to be tested -- both versions are supported by AWS Lambda)
+* Java 11 (Newer versions are also supported by AWS Lambda, such as 17 or 21, but need to be tested with CCE)
 
-
-After the requirements have been installed, in a terminal, set your credentials (aws_access_key_id and aws_access_key_id) using "aws configure". Confirm they are placed in ~/.aws/credentials file (Ubuntu path example).
+After the requirements have been installed, open a terminal and set your credentials (aws_access_key_id and aws_access_key_id) using "aws configure". Confirm they are placed in ~/.aws/credentials file (Ubuntu path example).
 
 After downloading the code, you need to change some parameters at:
 * ../CCE/CCE_code/engine/src/main/java/cce/ruleupload/Bins_DeployCode.java, change "cce-bucket" with the bucket name you created to store the deployed lambdas.
