@@ -12,6 +12,7 @@ Requirements to test CCE:
 
 * AWS account and IAM credentials
 * User with permissions policies: AmazonDynamoDBFullAccess, AWSLambdaFullAccess, AmazonS3FullAccess.
+* An IAM Role named LambdaFullAccess (arn:aws:iam::<your_account_id>:role/LambdaFullAccess), including the policy names [AmazonDynamoDBFullAccess, AWSLambda_FullAccess, CloudWatchLogsFullAccess].
 * S3 bucket (to store deployed lambdas)
 * AWS-CLI (https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
 * AWS SAM CLI (https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/install-sam-cli.html)
@@ -20,22 +21,7 @@ Requirements to test CCE:
 
 After the requirements have been installed, open a terminal and set your credentials (aws_access_key_id and aws_access_key_id) using "aws configure". Confirm they are placed in ~/.aws/credentials file (Ubuntu path example).
 
-After downloading the code, you need to change some parameters at:
-* ../CCE/CCE_code/engine/src/main/java/cce/ruleupload/Bins_DeployCode.java, change "cce-bucket" with the bucket name you created to store the deployed lambdas.
 
-Also, change the bucket name at:
-* ../CCE/CCE_code/statefull-lambda-archetype/target/classes/archetype-resources/pom.xml
-* ../CCE/CCE_code/statefull-lambda-archetype/src/main/resources/archetype-resources/pom.xml
-* ../CCE/CCE_code/stateless-lambda-archetype/target/classes/archetype-resources/pom.xml
-* ../CCE/CCE_code/stateless-lambda-archetype/src/main/resources/archetype-resources/pom.xml
-
-Set your AWS account ID at:
-* ../CCE/CCE_code/statefull-lambda-archetype/target/classes/archetype-resources/template.yaml
-* ../CCE/CCE_code/statefull-lambda-archetype/src/main/resources/archetype-resources/template.yaml
-* ../CCE/CCE_code/stateless-lambda-archetype/target/classes/archetype-resources/template.yaml
-* ../CCE/CCE_code/stateless-lambda-archetype/src/main/resources/archetype-resources/template.yaml
-
-Following, access the folder ../CCE/CCE_code/statefull-lambda-archetype and type "mvn clean install". Do the same for stateless-lambda-archetype. It will delete an old version (if exists) and compile and test the code.
 
 At the "engine" directory you can find the CCE.java, the main class.
 
