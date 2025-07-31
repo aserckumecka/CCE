@@ -20,6 +20,7 @@ import com.amazonaws.services.dynamodbv2.model.ResourceNotFoundException;
 
 public class DynDB {
 
+	// Responsible for creating and deleting tables in DynamoDB.
 	
 	public static void createTable(String tableName) {
 		AmazonDynamoDB client = AmazonDynamoDBClientBuilder.standard().build();
