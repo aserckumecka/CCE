@@ -86,13 +86,9 @@ public class CCE{
 	        // Setting user AWS data to archetypes (statefull and stateless...)
 	        ArrayList<Path> pomPaths = new ArrayList<Path>();
 	        pomPaths.add(Paths.get("..", "/statefull-lambda-archetype/src/main/resources/archetype-resources/pom.xml"));
-	        pomPaths.add(Paths.get("..", "/statefull-lambda-archetype/target/classes/archetype-resources/pom.xml"));
 	        pomPaths.add(Paths.get("..", "/stateless-lambda-archetype/src/main/resources/archetype-resources/pom.xml"));
-	        pomPaths.add(Paths.get("..", "/stateless-lambda-archetype/target/classes/archetype-resources/pom.xml"));
 	        pomPaths.add(Paths.get("..", "/statefull-lambda-archetype/src/main/resources/archetype-resources/template.yaml"));
-	        pomPaths.add(Paths.get("..", "/statefull-lambda-archetype/target/classes/archetype-resources/template.yaml"));
 	        pomPaths.add(Paths.get("..", "/stateless-lambda-archetype/src/main/resources/archetype-resources/template.yaml"));
-	        pomPaths.add(Paths.get("..", "/stateless-lambda-archetype/target/classes/archetype-resources/template.yaml"));
 	        
 	        for (Path path : pomPaths) {
 				Bins_DeployCode.findAndReplace(path, "yourRegion", awsRegion);
