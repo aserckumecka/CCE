@@ -25,7 +25,7 @@ public class CCE{
 			// Creating new AlarmDB and AlertDB tables or deleting them before recreating.
 			// Otherwise, the existing tables will be kept.
 			Scanner inputScanner = new Scanner(System.in);
-	        System.out.print("If you want to delete AlarmDB and AlertDB and re-create them, type (y):");
+	        System.out.print("You want create (or re-create) the AlarmDB and AlertDB tables? type (y):");
 	        String rebuildTables = inputScanner.nextLine(); // Read the entire line of input
 	        if (rebuildTables.equals("Y") || rebuildTables.equals("y")) {
 				DynDB.rebuildTables();
