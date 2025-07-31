@@ -66,13 +66,8 @@ public class DataConsumer implements Runnable{
 			block.clear();
 			
 			new Thread(new LambdaTrigger(binName, blockLT, triggerCount, blockLTsize, (int)triggerGap, awsRegion)).start();
-			
-			for (BlockingQueue<JSONObject> queue : queueArray) {
-				System.out.println(binName+ " - Queue size: " + queue.size());
-			}
 			new Thread(new WriteToDisk(rulePath, blockLT)).start();
 			triggerCount++;
-			
 		}
 	}
 	
