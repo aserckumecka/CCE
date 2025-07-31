@@ -1,46 +1,105 @@
-# CCE
-Cloud Correlation Engine
+# **☁️ CCE: Cloud Correlation Engine**
 
-CCE is a Cloud-based SIEM Correlation Engine that processes and correlates events using a stateless FaaS model while retaining the architecture of traditional SIEMs. CCE’s design comprises three main stages:
-Modelling - Transforming the stateful SIEM correlation engine into a stateless design for serverless functions. 
-Automation - Translating textual rules into executable serverless functions. 
-Optimization - Optimizing function grouping, execution, and hardware configuration for cost-efficiency.
-CCE is the first cloud-based SIEM correlation engine capable of generating code for filter and correlation rules, deploying them as FaaS; processing events and generating alerts; and correlating alerts over time to produce alarms.
-This is a prototype, under construction. More details are described in our paper, published in SRDS-2025.
+**A Cloud-based SIEM Correlation Engine using a stateless FaaS model.**  
+CCE reimagines traditional SIEM architecture by processing and correlating events through serverless functions, offering a modern, scalable, and cost-efficient approach to security event management.
 
-Requirements to test CCE:
+### **Key Design Stages**
 
-* AWS account and IAM credentials
-* User with permissions policies: AmazonDynamoDBFullAccess, AWSLambdaFullAccess, AmazonS3FullAccess.
-* An IAM Role named LambdaFullAccess (arn:aws:iam::<your_account_id>:role/LambdaFullAccess), including the policy names [AmazonDynamoDBFullAccess, AWSLambda_FullAccess, CloudWatchLogsFullAccess].
-* S3 bucket (to store deployed lambdas)
-* AWS-CLI (https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
-* AWS SAM CLI (https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/install-sam-cli.html)
-* Maven (https://maven.apache.org/install.html)
-* Java 11 (Newer versions are also supported by AWS Lambda, such as 17 or 21, but need to be tested with CCE)
+CCE's design is built upon three foundational stages:
 
-Configuring CCE:
+1. **📐 Modelling**  
+   * Transforming the stateful SIEM correlation engine into a stateless design perfectly suited for serverless functions (FaaS).  
+2. **⚙️ Automation**  
+   * Automatically translating textual security rules into executable, deployable serverless functions.  
+3. **💡 Optimization**  
+   * Efficiently optimizing function grouping, execution parameters, and hardware configuration to ensure maximum cost-efficiency.
 
-After the requirements have been installed, open a terminal and set your credentials (aws_access_key_id and aws_access_key_id) using "aws configure" command. It will be placed at "~/.aws/credentials" file (Ubuntu path example).
+### 
 
-After cloning the code, in "CCE-engine" folder, you will find the "CCE.conf" file, with the main parameters used by CCE.
-The parameters you must change before running are the S3 bucket (you create before), the AWS region you want to use, and your AWS account ID. Others are optional and used to set how long you want to run CCE (in millis); the Lambda hardware Level (the default value is 1024, the best cost-bennefit in our tests); and the Response Time Limit (RTL), which sets the interval that the user will tolerate wait (aprox.) to get the events processed.
+### **Core Capabilities**
 
-The devices' data are located at "../CCE-engine/devices/". The config folder contains a "yml" file per device, which sets their most important parameters, used by CCE.
-The folders "eps" and "ins" are used to collect processing data and recalculate the parameters of regression analysis for each device, estimating their processing cost.
+CCE is a cloud-based SIEM correlation engine capable of:
 
-The folder rule_template_code stores the last generated and deployed code for lambdas. Each lambda code contains the instructions of devices grouped by CCE Bin Packing algorithm (Detection Rules) and the code for Correlation Rules.
+* ✅ Generating code for filter and correlation rules.  
+* ✅ Deploying these rules dynamically as FaaS.  
+* ✅ Processing events and generating alerts.  
+* ✅ Correlating alerts over time to produce high-level alarms.
 
-The folder "rules_yml" contain all the rules CCE will use for processing events.
+**Note:** This is an early-stage prototype and is currently under active construction. More technical details are described in our paper, to be published in **SRDS-2025**.
 
-The "events" folder holds the generated events for each lambda, according to the devices in each one.
-For practical reasons, CCE is configured to process events created by our event generator (DataProducer).
+## 
 
-Running CCE:
+## **🚀 Getting Started**
 
-You can compile CCE code using maven (e.g. typing "mvn clean compile assembly:single" at the CCE-engine directory).
-To run just execute the jar file placed at target/ folder.
+### **Prerequisites**
 
-Beyond the informations shown at the terminal, you can see more data accessing the CloudWatch Log Groups, as well as the DynamoDB tables, containing the alerts and alarms created.
+Before you begin, ensure you have the following installed and configured:
 
-As mentioned before, this is the first version (under construction) and any feedback is very welcome!
+* **AWS Account & IAM Credentials**  
+  * You'll need an IAM User with the following policies attached:  
+    * AmazonDynamoDBFullAccess  
+    * AWSLambda\_FullAccess  
+    * AmazonS3FullAccess  
+  * You must also have an IAM Role named LambdaFullAccess with the following policies:  
+    * AmazonDynamoDBFullAccess  
+    * AWSLambda\_FullAccess  
+    * CloudWatchLogsFullAccess  
+    * The ARN will look like this: arn:aws:iam::\<your\_account\_id\>:role/LambdaFullAccess  
+* **An S3 Bucket** to store deployed Lambda functions.  
+* **AWS CLI:** [Installation Guide](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)  
+* **AWS SAM CLI:** [Installation Guide](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/install-sam-cli.html)  
+* **Apache Maven:** [Installation Guide](https://maven.apache.org/install.html)  
+* **Java 11:** Newer versions (like 17 or 21\) are supported by AWS Lambda but have not yet been fully tested with CCE.
+
+### 
+
+### **Configuration**
+
+1. **Configure AWS Credentials:**  
+   * Open a terminal and run aws configure.  
+   * Enter your aws\_access\_key\_id and aws\_secret\_access\_key. This will store them in the \~/.aws/credentials file.  
+2. **Edit CCE Configuration File:**  
+   * After cloning the repository, navigate to the CCE-engine/ folder.  
+   * Open the CCE.conf file.  
+   * You **must** change the following parameters to match your environment:  
+     * s3\_bucket\_name  
+     * aws\_region  
+     * aws\_account\_id  
+3. **Optional Parameters (in CCE.conf):**  
+   * CCE Runtime: How long you want CCE to run (as long as you set, more cost will be incurred).  
+   * Lambda Hardware Level: The memory allocation for the Lambda functions (default is 1024).  
+   * RTL: The Response Time Limit, which sets the approximate interval the user will tolerate waiting for results.
+
+### 
+
+### **Project Structure**
+
+* CCE-engine/devices/: Contains .yml configuration files for each device, defining their key parameters.  
+* CCE-engine/devices/eps/ & ..ins/: Used internally to collect processing data for cost-estimation models.  
+* CCE-engine/rules\_yml/: Contains all the filter and correlation rules that CCE will process.  
+* CCE-engine/events/: Holds the generated events for each Lambda function.  
+* CCE-engine/rule\_template\_code/: Stores the most recently generated and deployed Lambda code.
+
+For practical testing, CCE is configured to process events created by our event generator, **DataProducer**.
+
+## 
+
+## **▶️ Running CCE**
+
+1. **Compile the Code:**  
+   * Navigate to the CCE-engine/ directory in your terminal.  
+   * Run the Maven command to compile the project and package it into a single JAR file:  
+     mvn clean compile assembly:single
+
+2. **Execute CCE:**  
+   * Run the generated JAR file located in the target/ directory:  
+     java \-jar target/CCE-1.0-SNAPSHOT-jar-with-dependencies.jar
+
+3. **Monitor the Output:**  
+   * Beyond the information shown in the terminal, you can view detailed logs in **AWS CloudWatch Log Groups** and see the generated alerts and alarms in your **Amazon DynamoDB** tables.
+
+### 
+
+### **Feedback**
+
+As mentioned, this is the first version and is under construction. Any feedback is very welcome\!
