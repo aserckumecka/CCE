@@ -7,11 +7,11 @@ CCE reimagines traditional SIEM architecture by processing and correlating event
 
 CCE's design is built upon three foundational stages:
 
-1. **📐 Modelling**  
+1. **⚙️ Modelling**  
    * Transforming the stateful SIEM correlation engine into a stateless design perfectly suited for serverless functions (FaaS).  
 2. **⚙️ Automation**  
    * Automatically translating textual security rules into executable, deployable serverless functions.  
-3. **💡 Optimization**  
+3. **⚙️ Optimization**  
    * Efficiently optimizing function grouping, execution parameters, and hardware configuration to ensure maximum cost-efficiency.
 
 ### 
@@ -29,7 +29,7 @@ CCE is a cloud-based SIEM correlation engine capable of:
 
 ## 
 
-## **🚀 Getting Started**
+## ** Getting Started**
 
 ### **Prerequisites**
 
