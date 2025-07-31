@@ -93,7 +93,7 @@ For practical testing, CCE is configured to process events created by our event 
 
 2. **Execute CCE:**  
    * Run the generated JAR file located in the target/ directory:  
-     java -jar target/cce-faas-0.0.1-SNAPSHOT-jar-with-dependencies.jar
+     java \-jar target/CCE-1.0-SNAPSHOT-jar-with-dependencies.jar
 
 3. **Monitor the Output:**  
    * Beyond the information shown in the terminal, you can view detailed logs in **AWS CloudWatch Log Groups** and see the generated alerts and alarms in your **Amazon DynamoDB** tables.
